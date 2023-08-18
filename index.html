@@ -30,7 +30,8 @@
         if (typeof window.ethereum !== "undefined") {
           try {
             // Request wallet connection
-            await ethereum.request({ method: "eth_requestAccounts" });
+            const accounts = await ethereum.request({ method: "eth_requestAccounts" });
+            console.log("accounts", accounts)
             alert("Wallet connected successfully!");
           } catch (error) {
             alert("Wallet connection request rejected by the user.");
